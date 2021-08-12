@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Record Collection</title>
+  </head>
+  <body>
+    <h1>Look into a console</h1>
+
+    <script>
+      const palindrom = (inputString) => {
+        let text = inputString.toLowerCase().replace(/[\W_]/g, '');
+
+        const textArr = text.split('');
+        console.log(textArr);
+        const result = [];
+        for (let i = 0; i < textArr.length; i++) {
+          if (textArr[i] === textArr[textArr.length - i - 1]) {
+            result.push(true);
+          } else {
+            result.push(false);
+          }
+        }
+        console.log(result);
+        return result.every(item => item === true);
+      };
+
+      console.log(palindrom("eye"));
+      console.log(palindrom("_eye"));
+      console.log(palindrom("race car"));
+      console.log(palindrom("not a palindrome"));
+      console.log(palindrom("A man, a plan, a canal. Panama"));
+      console.log(palindrom("never odd or even"));
+      console.log(palindrom("nope"));
+      console.log(palindrom("almostomla"));
+      console.log(palindrom("My age is 0, 0 si ega ym."));
+      console.log(palindrom("1 eye for of 1 eye."));
+      console.log(palindrom("0_0 (: /-\ :) 0-0"));
+      console.log(palindrom("five|\_/|four"));
+
+    </script>
+  </body>
+</html>
